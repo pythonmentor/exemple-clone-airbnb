@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Votre réservation a été enregistrée{% endblock title %}
+
+{% block content %}
+<h1>Merci de votre réservation pour les bien suivants:</h1>
+    {% for availability in availabilities %}
+        {% if forloop.first %}<ul>{% endif %}
+        <li>{{ availability}}</li>
+        {% if forloop.last %}</ul>{% endif %}
+    {% empty %}
+        Aucun bien réservé
+    {% endfor %}
+{% endblock content %}
+
+
